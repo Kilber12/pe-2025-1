@@ -1,0 +1,58 @@
+
+===========================
+ Guia para Executar o Programa de Streaming
+===========================
+
+Este passo a passo vai te ajudar a compilar e rodar o programa feito em C, que permite gerenciar vídeos e usuários com seus vídeos favoritos. Siga as instruções abaixo:
+
+1. SALVAR O CÓDIGO
+-------------------
+Salve o código-fonte com o nome:
+    streaming.c
+
+2. COMPILAR O PROGRAMA
+------------------------
+Abra o terminal (ou prompt de comando) na pasta onde está o arquivo e digite:
+
+    gcc -o streaming streaming.c
+
+Isso vai gerar um executável chamado "streaming".
+
+Atenção: Se você estiver no Windows e o comando 'gcc' não funcionar, talvez seja necessário instalar o compilador MinGW ou usar o WSL.
+
+3. RODAR O PROGRAMA
+---------------------
+Depois de compilar com sucesso, execute o programa com:
+
+    ./streaming
+
+Ou, no Windows, apenas:
+
+    streaming
+
+4. O QUE O PROGRAMA FAZ
+-------------------------
+Você verá um menu como este:
+
+    --- Menu Streaming ---
+    1 - Cadastrar video
+    2 - Cadastrar usuario
+    3 - Listar videos
+    4 - Listar usuarios com favoritos
+    5 - Atualizar titulo de video
+    6 - Remover video
+    0 - Sair
+
+Ele cria dois arquivos para armazenar os dados:
+- videos.dat → onde ficam os vídeos cadastrados.
+- usuarios.dat → onde ficam os dados dos usuários e seus vídeos favoritos.
+
+5. LIMPAR OS ARQUIVOS (Opcional)
+----------------------------------
+Se quiser apagar os arquivos gerados (inclusive o executável), use:
+
+    rm streaming videos.dat usuarios.dat temp.dat
+
+===========================
+ Pronto! Agora é só testar!
+===========================
