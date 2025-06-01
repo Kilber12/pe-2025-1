@@ -11,11 +11,10 @@ typedef struct {
 typedef struct {
     int usuarioID;
     char usuarioNome[100];
-    int videosFavoritos[10]; // IDs dos vídeos favoritos
+    int videosFavoritos[10]; 
     int totalFavoritos;
 } Cliente;
 
-// Função auxiliar: busca título do vídeo por ID
 void buscarTituloPorID(int id, char *titulo) {
     FILE *arquivoVideos = fopen("videos.dat", "rb");
     Filme f;
@@ -31,7 +30,6 @@ void buscarTituloPorID(int id, char *titulo) {
     }
 }
 
-// Cadastrar vídeo
 void cadastrarVideo() {
     FILE *arquivoVideos = fopen("videos.dat", "ab");
     Filme f;
@@ -48,7 +46,6 @@ void cadastrarVideo() {
     fclose(arquivoVideos);
 }
 
-// Cadastrar usuário
 void cadastrarUsuario() {
     FILE *arquivoUsuarios = fopen("usuarios.dat", "ab");
     Cliente c;
@@ -68,7 +65,6 @@ void cadastrarUsuario() {
     fclose(arquivoUsuarios);
 }
 
-// Listar todos os vídeos
 void listarVideos() {
     FILE *arquivoVideos = fopen("videos.dat", "rb");
     Filme f;
@@ -83,7 +79,6 @@ void listarVideos() {
     }
 }
 
-// Listar todos os usuários com títulos dos vídeos favoritos
 void listarUsuariosComFavoritos() {
     FILE *arquivoUsuarios = fopen("usuarios.dat", "rb");
     Cliente c;
@@ -106,7 +101,6 @@ void listarUsuariosComFavoritos() {
     }
 }
 
-// Atualizar título do vídeo
 void atualizarTituloVideo() {
     int id;
     printf("ID do video a atualizar: ");
@@ -133,7 +127,6 @@ void atualizarTituloVideo() {
     }
 }
 
-// Remover vídeo (cria novo arquivo sem ele)
 void removerVideo() {
     int id;
     printf("ID do video a remover: ");
@@ -165,7 +158,6 @@ void removerVideo() {
     }
 }
 
-// Menu principal
 void menu() {
     int opcao;
     do {
@@ -193,8 +185,6 @@ void menu() {
     } while (opcao != 0);
 }
 
-// Função principal
-int main() {
     menu();
     return 0;
 }
